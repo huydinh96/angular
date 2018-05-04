@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { appRoutes } from './app.routes';
 import { CommonModule } from '@angular/common';
-
+import { ToastrModule } from 'ngx-toastr';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     CommonModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

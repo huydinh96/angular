@@ -1,4 +1,5 @@
 <form (submit)="onSubmit(formSignIn);" #formSignIn= "ngForm">
+  <h3>Đăng nhập</h3>
   <input
    placeholder="Email" 
    ngModel
@@ -28,7 +29,7 @@
       Email is not valid
     </p>
   <br><br>
-  <button [disabled]="formSignIn.invalid">Submit</button>
+  <button [disabled]="formSignIn.invalid" routerLink="/home">Submit</button>
 </form>
 <p>{{txtEmail.errors  | json}}</p>
 <p>{{txtPassword.errors | json}}</p>
