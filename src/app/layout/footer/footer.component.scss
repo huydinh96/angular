@@ -1,0 +1,64 @@
+footer{
+    // background: url('assets/images/background-footer.png') no-repeat 100%;
+    background: #eabe4d;
+    img{
+        max-width: 100%;
+    }
+}
+
+
+.menu{
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    line-height: 8;
+    a{
+        position: relative;
+        padding:5px 8px;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 16px;
+            top: 9px;
+            background: white;
+            left: 0;
+        }
+    }
+}
+.connect{
+    line-height: 8;
+    span{
+        color: white;
+        font-weight: 600;
+    }
+}
+.footer-bottom{
+    background: #dfb446;
+    line-height: 4;
+    p{
+        color: white;
+        margin: 0;
+        font-weight: 600;
+    }
+}
+@media (max-width:320px){
+    .menu{
+        font-size: 12px;
+        a{
+            &::after{
+                top: 5px;
+            }
+        }
+    }
+    .connect{
+        span{
+            font-size: 12px;
+        }
+    }
+    .footer-bottom{
+        p{
+            font-size: 12px;
+        }
+    }
+}

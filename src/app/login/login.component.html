@@ -1,0 +1,35 @@
+<form (submit)="onSubmit(formSignIn);" #formSignIn= "ngForm">
+  <input
+   placeholder="Email" 
+   ngModel
+   #txtEmail="ngModel"
+   name="email" required
+   >
+  <p *ngIf="txtEmail.touched && txtEmail.errors?.required">
+    Email is required
+  </p>
+  <p *ngIf="txtEmail.touched && txtEmail.errors?.required">
+    Email is not valid
+  </p>
+  <br><br>
+  <input type="password" 
+    placeholder="password" 
+    ngModel
+    #txtPassword ="ngModel"
+    minlength="6"
+    maxlength="24"
+    name="password"
+    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" 
+    required>
+    <p *ngIf="txtPassword.touched && txtPassword.errors?.required">
+      Email is required
+    </p>
+    <p *ngIf="txtPassword.touched && txtPassword.errors?.required">
+      Email is not valid
+    </p>
+  <br><br>
+  <button [disabled]="formSignIn.invalid">Submit</button>
+</form>
+<p>{{txtEmail.errors  | json}}</p>
+<p>{{txtPassword.errors | json}}</p>
+<p>{{formSignIn.value | json}}</p>
