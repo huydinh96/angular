@@ -1,36 +1,20 @@
-<form (submit)="onSubmit(formSignIn);" #formSignIn= "ngForm">
-  <h3>Đăng nhập</h3>
-  <input
-   placeholder="Email" 
-   ngModel
-   #txtEmail="ngModel"
-   name="email" required
-   >
-  <p *ngIf="txtEmail.touched && txtEmail.errors?.required">
-    Email is required
-  </p>
-  <p *ngIf="txtEmail.touched && txtEmail.errors?.required">
-    Email is not valid
-  </p>
-  <br><br>
-  <input type="password" 
-    placeholder="password" 
-    ngModel
-    #txtPassword ="ngModel"
-    minlength="6"
-    maxlength="24"
-    name="password"
-    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" 
-    required>
-    <p *ngIf="txtPassword.touched && txtPassword.errors?.required">
-      Email is required
-    </p>
-    <p *ngIf="txtPassword.touched && txtPassword.errors?.required">
-      Email is not valid
-    </p>
-  <br><br>
-  <button [disabled]="formSignIn.invalid" routerLink="/home">Submit</button>
+<form [formGroup]="rForm">
+  <div class="header">
+    <div class="redirect">
+      <a routerLink="/register">Đăng kí</a>
+    </div>
+  </div>
+  <div class="form-control">
+    <input type="text" id="email" placeholder="Email" formControlName="email">
+    <div *ngIf="formErrors.email">{{formErrors.email}}</div>
+  </div>
+  <div class="form-control">
+    <input type="password" id="password" placeholder="Password" formControlName="password">
+    <div *ngIf="formErrors.password">{{formErrors.password}}</div>
+  </div>
+  <div class="control">
+    <div class="submit">
+      <button (click)="onSubmit()" [disabled]="rForm.invalid || isSubmitting">Đăng Nhập</button>
+    </div>
+  </div>
 </form>
-<p>{{txtEmail.errors  | json}}</p>
-<p>{{txtPassword.errors | json}}</p>
-<p>{{formSignIn.value | json}}</p>

@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.form-control {
+  margin: 10px 0;
+  width: 100%;
+  input {
+    padding: 10px 5px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #e2e2e2;
+    box-shadow: none;
+    background: transparent;
+    width: 100%;
+  }
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .submit {
+    box-shadow: none;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+  }
+}

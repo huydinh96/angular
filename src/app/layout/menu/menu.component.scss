@@ -1,0 +1,29 @@
+.sub-menu {
+  padding: 0;
+  .menu-item {
+    list-style-type: none;
+    // display: none;
+    a {
+      color: #5bc7f1;
+      text-decoration: none;
+      display: block;
+      padding: 10px 15px;
+      text-transform: uppercase;
+    }
+  }
+}
+.collapse ul ul {
+    display: none;
+}
+.collapse ul li:hover > ul {
+    display:block;
+}
+.navbar-nav>.menu-item>a {
+  color: #5bc7f1;
+  transition: all 0.2s ease-in-out;
+  line-height: 1;
+  margin: 0px;
+  padding: 15px;
+  display: block;
+  text-transform: uppercase;  
+}
