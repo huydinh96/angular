@@ -14,7 +14,6 @@ import { InfoNutritionComponent } from './bran-story/info-nutrition/info-nutriti
 @NgModule({
   declarations: [
     AppComponent,
-    InfoNutritionComponent,
   ],
   imports: [
     BrowserModule,

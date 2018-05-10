@@ -1,37 +1,35 @@
-<form [formGroup]="registerForm">
-  <div class="header">
-    <h1>Create an account</h1>
-    <div class="redirect">
-      or <a routerLink="/login">login</a>
+<form (ngSubmit)="onSubmit(form.value)" [formGroup]="registerForm" #form="ngForm">
+  <div class="form-control">
+    <input type="text" id="username" placeholder="Username" formControlName="username" onblur="this.placeholder='Username'" onfocus="this.placeholder=''">
+    <div class="col alert alert-danger" role="alert" *ngIf="registerForm.controls.username?.errors?.required && registerForm.controls.username?.touched">
+      Username is required !
     </div>
   </div>
-
-  <div class="form-control" [ngClass]="setClassEmail()">
-    <input type="text" id="email" placeholder="Email" formControlName="email">
-    <div *ngIf="formErrors.email">{{formErrors.email}}</div>
+  <div class="form-control">
+    <input type="text" id="email" placeholder="Email" formControlName="email" onblur="this.placeholder='Email'" onfocus="this.placeholder=''">
+    <div class="col alert alert-danger" role="alert" *ngIf="registerForm.controls.email?.errors?.required && registerForm.controls.email?.touched">
+      Email is required !
+    </div>
   </div>
-
-  <div class="form-control" [ngClass]="setClassFullName()">
-    <input type="text" id="fullname" placeholder="Fullname" formControlName="fullname">
-    <div *ngIf="formErrors.fullname">{{formErrors.fullname}}</div>
+  <div class="form-control">
+    <input type="password" id="password" placeholder="Password" formControlName="password" onblur="this.placeholder='Password'"
+      onfocus="this.placeholder=''">
+    <div class="col alert alert-danger" role="alert" *ngIf="registerForm.controls.password?.errors?.required && registerForm.controls.password?.touched">
+      Password is required !
+    </div>
   </div>
-
-  <div class="form-control" [ngClass]="setClassPassword()">
-    <input type="password" id="password" placeholder="Password" formControlName="password">
-    <div *ngIf="formErrors.password">{{formErrors.password}}</div>
+  <div class="form-control">
+    <input type="password" id="confirmPassword" placeholder="ConfirmPassword" formControlName="confirmPassword" onblur="this.placeholder='ConfirmPassword'"
+      onfocus="this.placeholder=''">
+    <div class="col alert alert-danger" role="alert" *ngIf="registerForm.controls.confirmPassword?.errors?.required && registerForm.controls.confirmPassword?.touched">
+      ConfirmPassword is required !
+    </div>
   </div>
-
-  <div class="form-control" [ngClass]="setClassConfirmPassword()">
-    <input type="password" id="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword">
-    <div *ngIf="formErrors.confirmPassword">{{formErrors.confirmPassword}}</div>
-  </div>
-
   <div class="control">
-    <div class="terms">
-      <input type="checkbox"> I agree to terms
-    </div>
     <div class="submit">
-      <button (click)="onSubmit()" [disabled]="!registerForm.valid || isSubmitting">Create an account</button>
+      <button [disabled]="registerForm.invalid">Đăng Kí</button>
     </div>
   </div>
 </form>
+<p>Form value</p>
+<pre>{{form.value | json}}</pre>

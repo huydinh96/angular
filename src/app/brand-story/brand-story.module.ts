@@ -7,12 +7,14 @@ import { ProductMaterialsComponent } from './product-materials/product-materials
 import { ProductProcessingComponent } from './product-processing/product-processing.component';
 import { brandStoryRoutes } from './brand-story.routes';
 import { InfoNutritionComponent } from './info-nutrition/info-nutrition.component';
-
+import { ProcessingEggsComponent } from './product-processing/processing-eggs/processing-eggs.component';
+import { ProcessingMixtureComponent } from './product-processing/processing-mixture/processing-mixture.component';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(brandStoryRoutes),
   ],
-  declarations: [BrandStoryComponent, ProductMaterialsComponent, ProductProcessingComponent, InfoNutritionComponent]
+  // tslint:disable-next-line:max-line-length
+  declarations: [BrandStoryComponent, ProductMaterialsComponent, ProductProcessingComponent, InfoNutritionComponent, ProcessingEggsComponent, ProcessingMixtureComponent]
 })
 export class BrandStoryModule { }
