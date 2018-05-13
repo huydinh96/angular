@@ -6,22 +6,27 @@
         left: 0;
         right: 0;
         margin: 0 auto;
+        p{
+            font-family: 'Roboto-Regular';
+        }
     }
 }
 .processing{
     padding: 10px 0px;
     a{
+        font-family: 'Roboto-Bold';
         margin: 0px 5px;
         text-decoration: none;
         transition: cubic-bezier(0.075, 0.82, 0.165, 1);
         padding: 5px 50px;
-        border: 1px solid #d44239;
+        border: 1px solid #e32f2e;
         border-radius: 20px;
-        color: #d44239;
+        color: #e32f2e;
         font-weight: 600;
-        &:hover{
+        &.active{
             color: white;
-            background: #d44239;
+            background: #e32f2e;
+            -webkit-transition: all .5s ease;
         }
     }
 }

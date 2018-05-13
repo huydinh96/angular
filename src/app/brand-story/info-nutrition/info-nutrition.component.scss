@@ -2,6 +2,13 @@
   padding: 45px;
 }
 
+h2 {
+  font-family: 'iCielSoupofJustice';
+  font-size: 48px;
+  color: #e6302f;
+  text-transform: uppercase;
+}
+
 img {
   max-width: 100%;
 }
@@ -10,16 +17,64 @@ img {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  p {
+    color: #333;
+    padding: 2px 15px 0px 0px;
+    font-family: 'Roboto-Regular';
+  }
 }
 
 .title {
+  font-family: 'iCielSoupofJustice';
   text-align: center;
   color: #e6302f;
-  font-size: 28px;
+  font-size: 48px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
   line-height: 1.3;
 }
 
+.circle {
+  margin: 0 auto;
+  width: 17em;
+  height: 17em;
+  border: 5px solid #F2AF04;
+  border-radius: 50%;
+}
 
+.img-search {
+  background: #fff;
+  border-radius: 50%;
+  width: calc(100% + 9px);
+  height: calc(100% + 9px);
+  margin-top: -16px;
+  margin-left: -8px;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.content-fix {
+  padding: 10px 15px 0px 0px;
+  color: #333;
+  font-family: 'Roboto-Regular';
+  font-size: 15px;
+  font-weight: 450;
+  line-height: 1.6;
+}
+
+.item-search:nth-child(2n).item-odd-even {
+  padding-top: 50px;
+}

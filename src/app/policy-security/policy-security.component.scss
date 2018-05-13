@@ -1,0 +1,45 @@
+.block {
+  padding: 0 50px;
+}
+
+.block-1,
+.block-2 {
+  h2 {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #333333;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: 'Roboto-Bold';
+    margin-bottom: 20px;
+  }
+  .content-info {
+    span {
+      font-family: 'Roboto-Bold';
+      text-transform: uppercase;
+    }
+    p {
+      font-family: 'Roboto-Regular';
+    }
+    ul {
+      li {
+        list-style: none;
+      }
+    }
+    ol {
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+@media (max-width:991px) {
+  .block {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+

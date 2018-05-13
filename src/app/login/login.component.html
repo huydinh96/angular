@@ -1,7 +1,7 @@
 <form [formGroup]="rForm">
   <div class="header">
     <div class="redirect">
-      <a routerLink="/register">Đăng kí</a>
+      <h2>Đăng Nhập</h2>
     </div>
   </div>
   <div class="form-control">
@@ -15,6 +15,7 @@
   <div class="control">
     <div class="submit">
       <button (click)="onSubmit()" [disabled]="rForm.invalid || isSubmitting">Đăng Nhập</button>
+      <a routerLink="/register">Đăng kí</a>
     </div>
   </div>
 </form>

@@ -23,7 +23,7 @@ export const brandStoryRoutes: Routes = [
                     { path: 'mixture', component: ProcessingMixtureComponent }
                 ]
             },
-            { path: 'info', component: InfoNutritionComponent }
+            { path: 'info', component: InfoNutritionComponent },
         ]
     }
 ];

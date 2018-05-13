@@ -1,4 +1,9 @@
 <form (ngSubmit)="onSubmit(form.value)" [formGroup]="registerForm" #form="ngForm">
+  <div class="header">
+    <div class="redirect">
+      <h2>Đăng Kí</h2>
+    </div>
+  </div>
   <div class="form-control">
     <input type="text" id="username" placeholder="Username" formControlName="username" onblur="this.placeholder='Username'" onfocus="this.placeholder=''">
     <div class="col alert alert-danger" role="alert" *ngIf="registerForm.controls.username?.errors?.required && registerForm.controls.username?.touched">
@@ -28,6 +33,7 @@
   <div class="control">
     <div class="submit">
       <button [disabled]="registerForm.invalid">Đăng Kí</button>
+      <a routerLink="/login">Đăng Nhập</a>
     </div>
   </div>
 </form>

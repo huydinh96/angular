@@ -1,3 +1,23 @@
+.brand-story {
+  position: relative;
+  padding: 0 20px;
+  .img-product {
+    img {
+      overflow-y: hidden;
+      position: absolute;
+      top: -151px;
+      right: -197px;
+      z-index: 2;
+      max-width: 280px;
+      min-width: 180px;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
 .menu {
   padding-left: 80px;
   padding-right: 80px;
@@ -8,7 +28,7 @@
     line-height: 2;
     margin: 5px 0px;
     padding: 7px;
-    &:hover {
+    &.active {
       background: linear-gradient(to top, rgba(184, 5, 1, 1), rgba(254, 4, 0, 1));
       a {
         background: linear-gradient(to bottom, rgba(254, 4, 0, 0.3), rgba(249, 35, 1, 1));
@@ -16,6 +36,8 @@
       }
     }
     a {
+      font-family: 'iCielSoupofJustice';
+      font-size: 20px;
       display: block;
       border-radius: 50px;
       background: #fff;
@@ -26,8 +48,9 @@
     }
   }
 }
-@media (max-width:991px){
-  .menu{
+
+@media (max-width:991px) {
+  .menu {
     padding-left: unset;
     padding-right: unset;
   }

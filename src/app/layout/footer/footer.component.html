@@ -1,30 +1,44 @@
 <footer>
-  <div class="container">
+  <div class="img-footer">
+    <!-- <img src="assets/images/background-footer-subpage.png" alt=""> -->
+  </div>
+  <div class="contaier">
     <div class="row">
-      <div class="col-md-3">
-        <img src="assets/images/logo.png" alt="">  
+      <div class="col-lg-8 col-sm-9 col-lg-offset-0 col-sm-offset-3">
+        <ul class="footer-menu">
+          <li class="menu-item">
+            <a [routerLink]="['brands/materials']" routerLinkActive="active">Giới thiệu</a>
+          </li>
+          <li class="menu-item">
+            <a routerLink="/bao-mat" routerLinkActive="active">Chính sách bảo mật
+            </a>
+          </li>
+          <li class="menu-item">
+            <a target="_blank"  href="http://www.ajinomoto.com.vn/customercare" >Liên hệ</a>
+          </li>
+          <li class="menu-item">
+            <a routerLink="/so-do" routerLinkActive="active">Sơ đồ website</a>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-5 menu">
-        <a routerLink="/home">Giới Thiệu</a>
-        <a routerLink="">Chính sách bảo mật</a>
-        <a routerLink="">Liên hệ</a>
-      </div>
-      <div class="col-md-4 connect">
-        <span>KẾT NỐI AJI-MAYO</span>
-        <a routerLink="">
-          <img src="assets/images/icon-facebook.png" alt="">
-        </a>
-        <a routerLink="">
-          <img src="assets/images/icon-youtube.png" alt="">
-        </a>
+      <div class="col-lg-4 col-sm-9 col-lg-offset-0 col-sm-offset-3 fixed-footer">
+        <div class="social-label">Kết nối với Aji-mayo
+          <sup class="roboto-bold">®</sup>
+        </div>
+        <div class="social-list">
+          <a href="https://www.facebook.com/ajimayo.ajinomoto/" target="_blank">
+            <img src="assets/images/icon-facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.youtube.com/watch?v=yU6n5jBGbYM&amp;list=PL-Hm56BQexQqB_teZR4vOlq84gRaaCZRg" target="_blank">
+            <img src="assets/images/icon-youtube.png" alt="Youtube">
+          </a>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12 text-center footer-bottom">
-        <p>Copyright © 2018 • Ajinomoto Vietnam • All rights reserved</p>
-      </div>
+  <div class="copy-right">
+    <div class="container">
+      <div class="content-text">Copyright © 2018 • Ajinomoto Vietnam • All rights reserved</div>
     </div>
   </div>
 </footer>

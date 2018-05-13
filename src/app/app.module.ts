@@ -8,12 +8,14 @@ import { LayoutModule } from './layout/layout.module';
 import { appRoutes } from './app.routes';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from './providers/toastr.service';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InfoNutritionComponent } from './bran-story/info-nutrition/info-nutrition.component';
+import { PolicySecurityComponent } from './policy-security/policy-security.component';
+import { MapComponent } from './map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
+    PolicySecurityComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
