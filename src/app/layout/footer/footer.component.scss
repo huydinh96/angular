@@ -1,4 +1,16 @@
+.scroll-to-top {
+  position: fixed;
+  top: 75%;
+  transform: translateY(-70%);
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+}
 
+.show-scroll {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
 footer {
   color: #fff;
   font-family: 'Roboto-Light';

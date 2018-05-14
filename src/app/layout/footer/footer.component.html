@@ -36,6 +36,11 @@
       </div>
     </div>
   </div>
+  <div class="scroll-to-top" [ngClass]="{'show-scroll': navIsFixed}">
+      <button (click)="scrollToTop()">
+          Top
+      </button>
+  </div>
   <div class="copy-right">
     <div class="container">
       <div class="content-text">Copyright © 2018 • Ajinomoto Vietnam • All rights reserved</div>
