@@ -1,57 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from './login.service';
+import { AuthService } from '../providers/auth.service';
+import { Router } from '@angular/router';
+// import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public rForm: FormGroup;
-  public isSubmitting = false;
-  public formErrors = {
-    email: '',
-    password: '',
-  };
+  public email: string;
+  public password: string;
   constructor(
-    private formBuilder: FormBuilder,
-    private loginService: LoginService,
-  ) {
-  }
+    private authService: AuthService,
+    private router: Router,
+    // private toastrService: ToastrService,
+  ) { }
 
   ngOnInit() {
-    this.buildForm();
   }
-  onLogin() {
-    this.isSubmitting = true;
-    this.loginService.login(this.rForm.value).subscribe(
-      () => {
-        this.isSubmitting = false;
-        alert('bravo');
-      },
-      (err) => {
-        this.isSubmitting = false;
-        // { detail: {'email': 'trung' } }
-        if (err.detail) {
-          console.log(err.detail);
-          Object.keys(err.detail).map((field) => {
-            this.formErrors[field] = err.detail[field];
-          });
-        }
-      }
-    );
+  onSubmitLogin() {
+    this.authService.loginEmail(this.email, this.password)
+      .then((res) => {
+        // this.toastrService.success('Login thành công');
+        this.router.navigate(['/brands']);
+      }).catch((err) => {
+        console.log(err);
+        this.router.navigate(['/login']);
+      });
   }
-
-  public buildForm() {
-    this.rForm = this.formBuilder.group({
-      email: ['', [
-        Validators.required,
-        Validators.email,
-      ]],
-      password: ['', [
-        Validators.required,
-      ]],
-    });
+  onClickFbLogin() {
+    this.authService.loginFb().then((res) => {
+      this.router.navigate(['/brands']);
+    }).catch((err) => console.log(err.message));
   }
-  // private onValue(){}
+  onClickGoogleLogin() {
+    this.authService.loginGoogle().then((res) => {
+      this.router.navigate(['/brands']);
+    }).catch((err) => console.log(err.message));
+  }
+  onClickTwLogin() {
+    this.authService.loginTwitter().then((res) => {
+      this.router.navigate(['/brands']);
+    }).catch((err) => console.log(err.message));
+  }
 }

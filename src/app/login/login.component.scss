@@ -1,62 +1,17 @@
-:host {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  margin: 0 auto;
-  padding: 46px 0px;
+.btn-facebook, .btn-google, .btn-twitter{
+    width: 32%;
 }
-
-.header {
-  h2 {
-    text-align: center;
-    font-family: 'Roboto-Bold';    
-    color:rgba(254, 4, 0, 1);
-  }
+.btn-facebook{
+    background: #3b5998;
+    color: #fff;
 }
-
-.form-control {
-  margin: 10px 0;
-  width: 100%;
-  input {
-    padding: 10px 5px;
-    border-radius: 3px;
-    outline: none;
-    border: 1px solid #e2e2e2;
-    box-shadow: none;
-    background: transparent;
-    width: 100%;
-  }
+.btn-google{
+    background: #dd4b39;
+    color: #fff;
+    
 }
-
-.control {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .submit {
-    button{
-      cursor: pointer;
-      border: none;
-      font-family: 'Roboto-Bold';      
-      outline: none;
-      color: black;
-      border-radius: 20px;
-      padding: 10px;
-      background: linear-gradient(to top, rgba(184, 5, 1, 1), rgba(254, 4, 0, 1));
-      &:hover{
-        color: #FFDA42;        
-      }
-    }
-    a {
-      background: linear-gradient(to top, rgba(184, 5, 1, 1), rgba(254, 4, 0, 1));      
-      border-radius: 20px;
-      padding: 10px;
-      // padding: 0px 10px;
-      text-decoration: none;
-      color: black;
-      font-family: 'Roboto-Bold';
-      &:hover {
-        color: #FFDA42;
-      }
-    }
-  }
+.btn-twitter{
+    background: #55acee;
+    color: #fff;
+    
 }

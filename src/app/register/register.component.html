@@ -1,30 +1,20 @@
-<form  [formGroup]="registerForm">
-  <div class="header">
-    <div class="redirect">
-      <h2>Đăng Kí</h2>
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="text-center">Register</h2>
+        <form (submit)="onSubmit()">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+          </div>
+          <input type="submit" value="Register" class="btn btn-primary btn-block">       
+        </form>
+      </div>
     </div>
   </div>
-  <div class="form-control">
-    <input type="text" id="username" placeholder="UserName" formControlName="username" onblur="this.placeholder='UserName'" onfocus="this.placeholder=''">
-    <div *ngIf="formErrors.usename">{{formErrors.usename}}</div>
-  </div>
-  <div class="form-control">
-    <input type="text" id="email" placeholder="Email" formControlName="email" onblur="this.placeholder='Email'" onfocus="this.placeholder='' ">
-    <div *ngIf="formErrors.email">{{formErrors.email}}</div>
-  </div>
-  <div class="form-control">
-    <input type="password" id="password" placeholder="Password" formControlName="password" onblur="this.placeholder='Password'" onfocus="this.placeholder='' ">
-    <div *ngIf="formErrors.password">{{formErrors.password}}</div>
-  </div>
-  <div class="form-control">
-    <input type="password" id="passwordConfirm" placeholder="PasswordConfirm" formControlName="passwordConfirm" onblur="this.placeholder='PasswordConfirm'" onfocus="this.placeholder='' ">
-    <div *ngIf="formErrors.passwordConfirm">{{formErrors.passwordConfirm}}</div>
-  </div>
-  <div class="control">
-    <div class="submit">
-      <button (click)="onSubmit()" [disabled]="registerForm.invalid">Đăng Kí</button>
-      <a routerLink="/login">Đăng Nhập</a>
-    </div>
-  </div>
-</form>
-
+</div>

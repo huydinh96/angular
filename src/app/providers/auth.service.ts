@@ -1,20 +1,43 @@
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-// import { tap, delay } from 'rxjs/operators';
-// import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/map';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class AuthService {
-    isLoggedIn = false;
-    redirecUrl: string;
-    public Login() {
-        return new Observable(subscribe => {
-            setTimeout(() => {
-                this.isLoggedIn = true;
-                subscribe.next(this.isLoggedIn);
-                subscribe.complete();
-            }, 0);
+    constructor(
+        public authFire: AngularFireAuth,
+    ) {
+    }
+
+    register(email: string, pass: string) {
+        return new Promise((resolve, reject) => {
+            this.authFire.auth.createUserWithEmailAndPassword(email, pass)
+                .then(userData => resolve(userData),
+                    err => reject(err));
         });
+    }
+    loginEmail(email: string, pass: string) {
+        return new Promise((resolve, reject) => {
+            this.authFire.auth.signInWithEmailAndPassword(email, pass)
+                .then(userData => resolve(userData),
+                    err => reject(err));
+        });
+    }
+    getAuth() {
+        return this.authFire.authState.map(auth => auth);
+    }
+    logout() {
+        return this.authFire.auth.signOut();
+    }
+    loginGoogle() {
+        return this.authFire.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    }
+    loginTwitter() {
+        return this.authFire.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+    }
+    loginFb() {
+        return this.authFire.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
     }
 }

@@ -1,21 +1,31 @@
-<form [formGroup]="rForm">
-  <div class="header">
-    <div class="redirect">
-      <h2>Đăng Nhập</h2>
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="text-center">Login</h2>
+        <form (submit)="onSubmitLogin()">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+          </div>
+          <input type="submit" value="Login" class="btn btn-primary btn-block btn-lg">
+        </form>
+      </div>
     </div>
   </div>
-  <div class="form-control">
-    <input type="text" id="email" placeholder="Email" formControlName="email">
-    <div *ngIf="formErrors.email">{{formErrors.email}}</div>
-  </div>
-  <div class="form-control">
-    <input type="password" id="password" placeholder="Password" formControlName="password">
-    <div *ngIf="formErrors.password">{{formErrors.password}}</div>
-  </div>
-  <div class="control">
-    <div class="submit">
-      <button (click)="onSubmit()" [disabled]="rForm.invalid || isSubmitting">Đăng Nhập</button>
-      <a routerLink="/register">Đăng kí</a>
+</div>
+<div class="row">
+  <div class="col-md-6 mx-auto mt-2">
+    <div class="card">
+      <div class="card-body d-flex justify-content-around">
+        <button class="btn btn-lg btn-facebook" (click)="onClickFbLogin()"><i class="fa fa-facebook"> Facebook</i></button>
+        <button class="btn btn-lg btn-google" (click)="onClickGoogleLogin()"><i class="fa fa-google-plus"> Google</i></button>
+        <button class="btn btn-lg btn-twitter" (click)="onClickTwLogin()"><i class="fa fa-twitter"> Twitter</i></button>
+      </div>
     </div>
   </div>
-</form>
+</div>

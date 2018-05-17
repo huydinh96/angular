@@ -7,7 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { ConfirmComponent } from './menu/confirm.component';
-
+import { AuthService } from '../providers/auth.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -23,5 +23,6 @@ import { ConfirmComponent } from './menu/confirm.component';
   entryComponents: [
     ConfirmComponent,
   ],
+  providers: [AuthService],
 })
 export class LayoutModule { }
