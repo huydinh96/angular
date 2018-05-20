@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-
-import 'rxjs/add/operator/map';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
+import 'rxjs/add/operator/map';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class AuthService {
@@ -11,7 +10,7 @@ export class AuthService {
     ) {
     }
 
-    register(email: string, pass: string) {
+    registerUser(email: string, pass: string) {
         return new Promise((resolve, reject) => {
             this.authFire.auth.createUserWithEmailAndPassword(email, pass)
                 .then(userData => resolve(userData),

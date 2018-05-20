@@ -15,7 +15,8 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.authService.getAuth().subscribe( auth => {
+    // tslint:disable-next-line:no-shadowed-variable
+    this.authService.getAuth().subscribe(auth => {
       if (auth) {
         this.isLogin = true;
         this.nemberUser = auth.displayName;
@@ -27,5 +28,8 @@ export class MenuComponent implements OnInit {
   }
   onClickLogout() {
     this.authService.logout();
+  }
+  onHide() {
+
   }
 }

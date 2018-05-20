@@ -10,5 +10,5 @@ export const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'bao-mat', component: PolicySecurityComponent },
     { path: 'so-do', component: MapComponent },
-    { path: '**', component: NotfoundComponent },
+    { path: '**', redirectTo: '' },
 ];
