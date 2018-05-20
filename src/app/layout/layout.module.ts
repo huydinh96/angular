@@ -6,7 +6,6 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { ConfirmComponent } from './menu/confirm.component';
 import { AuthService } from '../providers/auth.service';
 import { SliderComponent } from './slider/slider.component';
 @NgModule({
@@ -16,15 +15,13 @@ import { SliderComponent } from './slider/slider.component';
     MatMenuModule,
     RouterModule,
   ],
-  declarations: [MenuComponent, FooterComponent, ConfirmComponent, SliderComponent],
+  declarations: [MenuComponent, FooterComponent, SliderComponent],
   exports: [
     MenuComponent,
     FooterComponent,
-    ConfirmComponent,
     SliderComponent,
   ],
   entryComponents: [
-    ConfirmComponent,
   ],
   providers: [AuthService],
 })

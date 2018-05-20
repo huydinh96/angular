@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./brand-story.component.scss']
 })
 export class BrandStoryComponent implements OnInit {
+
   constructor() { }
 
   ngOnInit() {
   }
+
 }

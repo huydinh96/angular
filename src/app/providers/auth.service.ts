@@ -9,7 +9,6 @@ export class AuthService {
         public authFire: AngularFireAuth,
     ) {
     }
-
     registerUser(email: string, pass: string) {
         return new Promise((resolve, reject) => {
             this.authFire.auth.createUserWithEmailAndPassword(email, pass)

@@ -18,8 +18,12 @@ import { AuthService } from './providers/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { BrandStoryComponent } from './brand-story/brand-story.component';
+import { InfoNutritionComponent } from './brand-story/info-nutrition/info-nutrition.component';
+import { ProductProcessingComponent } from './brand-story/product-processing/product-processing.component';
+import { ProductMaterialsComponent } from './brand-story/product-materials/product-materials.component';
+import { ProductShowComponent } from './brand-story/product-show/product-show.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +32,11 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
     PolicySecurityComponent,
     MapComponent,
     NotfoundComponent,
+    BrandStoryComponent,
+    ProductProcessingComponent,
+    InfoNutritionComponent,
+    ProductMaterialsComponent,
+    ProductShowComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,13 +50,11 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    FlashMessagesModule,
     ToastrModule,
   ],
   providers: [
     ToastrService,
     AuthService,
-    FlashMessagesService,
   ],
   bootstrap: [AppComponent]
 })

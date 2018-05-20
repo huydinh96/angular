@@ -29,7 +29,4 @@ export class MenuComponent implements OnInit {
   onClickLogout() {
     this.authService.logout();
   }
-  onHide() {
-
-  }
 }

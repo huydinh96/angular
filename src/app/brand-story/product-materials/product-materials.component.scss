@@ -1,0 +1,131 @@
+.fx-pd {
+    padding: 20px 70px;
+  }
+  
+  .fix-mg {
+    margin-top: 70px;
+  }
+  
+  p {
+    font-family: 'Roboto-Regular';
+    margin: 0 0 11px;
+  }
+  
+  h2 {
+    font-family: 'iCielSoupofJustice';
+  }
+  
+  .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .material_content {
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .material_content_1 {
+    background-color: #ffefbe;
+    -webkit-box-shadow: 5px 5px #AB954A;
+    box-shadow: 5px 5px #AB954A;
+    .material_subcontent {
+      padding: 20px 40px 40px; // border-color: #e6302e;
+      border: 3px dashed #e6302e;
+      border-radius: 30px;
+      img {
+        margin: -12px 20px 0 -36px;
+        width: 190px;
+        float: left;
+      }
+      h3 {
+        margin-top: 20px;
+        line-height: 60px;
+        font-size: 70px;
+        color: #e6302e;
+        font-family: 'iCielSoupofJustice';
+      }
+      blockquote {
+        background-color: #e6302e;
+        padding: 30px 40px;
+        border-radius: 25px;
+        color: #fff;
+        margin-top: 45px;
+        font-family: "Roboto-Bold";
+        font-weight: bold;
+      }
+      hr {
+        border: 1px dashed #e6302e;
+        margin: 10px 0;
+      }
+    }
+  }
+  
+  .material_subcontent {
+    border: 3px dashed #fff;
+    border-radius: 30px;
+    padding: 20px 30px;
+  }
+  
+  .material_content_2 {
+    background-color: #3ccf38;
+    -webkit-box-shadow: 5px 5px #456C40;
+    box-shadow: 5px 5px #456C40;
+    color: #fff;
+    img {
+      float: left;
+      margin: -70px 15px 0 0;
+      width: 100px;
+    }
+    h2 {
+      line-height: 45px;
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .material_content_3 {
+    background-color: #fff;
+    -webkit-box-shadow: 5px 5px #D8D7D2;
+    box-shadow: 5px 5px #D8D7D2;
+    img {
+      float: left;
+      max-width: 80px;
+      margin-right: 15px;
+    }
+    h2 {
+      color: #feda43;
+      line-height: 45px;
+      font-size: 50px;
+    }
+    .material_subcontent {
+      border-color: #feda43;
+    }
+  }
+  
+  .material_content_4 {
+    background-color: #f9a372;
+    -webkit-box-shadow: 5px 5px #C4865F;
+    box-shadow: 5px 5px #C4865F;
+    color: #fff;
+    h2 {
+      line-height: 50px;
+      color: #feda43;
+      font-size: 39px;
+    }
+    img {
+      width: 130px;
+      float: right;
+      margin: -10px -60px 0 10px
+    }
+  }
+  
+  @media (max-width:991px) {
+    .fx-pd {
+      padding: 15px 15px;
+    }
+  }
+  

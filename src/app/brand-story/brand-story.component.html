@@ -1,12 +1,25 @@
-
-<div class="container brand-story">
-  <div class="row">
-    <div class="img-product img-responsive">
-      <img src="assets/images/element-1.png" alt="">
-    </div>
-    <img src="assets/images/shine.png" alt="" class="shine-img img-responsive">
-    <img src="assets/images/ajimayo-about.png" alt="">
+<div class="row">
+  <div class="img-product img-responsive">
+    <img src="assets/images/element-1.png" alt="">
   </div>
-  <app-material ></app-material>
+  <img src="assets/images/shine.png" alt="" class="shine-img img-responsive">
+  <img src="assets/images/ajimayo-about.png" alt="">
+</div>
+<div class="row menu">
+  <div class="col-md-4">
+    <div class="cs-button" routerLinkActive="active">
+      <a [routerLink]="['/brands/material']">Nguyên Liệu</a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="cs-button" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['/brands/process']">Quy Trình Sản Xuất</a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="cs-button" routerLinkActive="active">
+      <a [routerLink]="['/brands/info']">Thông Tin Dinh Dưỡng</a>
+    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>

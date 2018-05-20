@@ -10,6 +10,11 @@ export class ProductProcessingComponent implements OnInit {
   changeValue(valid: boolean) {
     this.isShow = valid;
   }
+  // tabIndex = 1;
+  // changeValue(tabIndex) {
+  //   this.tabIndex = tabIndex;
+  //   // console.log('aaaa')
+  // }
   constructor() { }
 
   ngOnInit() {
