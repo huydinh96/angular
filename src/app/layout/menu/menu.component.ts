@@ -10,6 +10,7 @@ export class MenuComponent implements OnInit {
   public isLogin: boolean;
   public nemberUser: string;
   public emailUser: string;
+  isHide = false;
   constructor(
     private authService: AuthService,
   ) { }
@@ -28,5 +29,8 @@ export class MenuComponent implements OnInit {
   }
   onClickLogout() {
     this.authService.logout();
+  }
+  onHide() {
+    this.isHide = !this.isHide;
   }
 }

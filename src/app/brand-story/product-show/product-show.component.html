@@ -1,49 +1,247 @@
-<div class="row">
-  <div class="text-center btn-about-ajimayo">
-    <div class="cs-button button-white active">
-      <a routerLink="/brands/materials">Về Aji-mayo
-        <sup class="roboto-bold">®</sup>
-      </a>
-    </div>
-    <img src="assets/images/shadow-about-aj.png" style="width: 100%;">
-  </div>
-</div>
 <div class="row about-ajimayo-content">
   <div class="col-md-4  col-sm-4 fixed-mobile-z-index">
-    <div class="img-move img-responsive">
-      <img src="assets/images/move.png">
+    <div class="product-slider1" style="height: 635.641px;">
+      <div class="img-move img-responsive">
+        <img src="assets/images/move.png">
+      </div>
+      <div data-index="0" class="slide-item center" (click)="changeValues(1)">
+        <img src="assets/images/demo-product-1-min.png">
+      </div>
+      <div data-index="1" class="slide-item items-1" (click)="changeValues(2)">
+        <img src="assets/images/demo-product-2-min.png">
+      </div>
+      <div data-index="2" class="slide-item items-2">
+        <img src="assets/images/demo-product-3-min.png" (click)="changeValues(3)">
+      </div>
     </div>
   </div>
-  <div class="col-md-8 col-sm-8 right">
+  <div class="col-md-8 col-sm-8 right" id="box1">
     <div class="col-lg-8 col-md-12">
       <h1 class="product-title box">
         Mayonnaise Aji-mayo
         <sup class="roboto-bold">®</sup>
-        260G
+        <div [ngSwitch]="tabIndex">
+          <div *ngSwitchCase="1">
+            130G
+          </div>
+          <div *ngSwitchCase="2">
+            1KG
+          </div>
+          <div *ngSwitchCase="3">
+            260G
+          </div>
+        </div>
       </h1>
-      <div class="product-container">
+      <div class="product-container" *ngIf="isShow">
         <span class="product-section box">
           giới thiệu
         </span>
+        <div class="product-content content-block1 box">
+          <div [ngSwitch]="tabIndex">
+            <div *ngSwitchCase="1">
+              <p>Xốt
+                <b>Mayonnaise&nbsp;Aji-mayo®</b>&nbsp;là xốt gia vị đa năng phù hợp với nhiều món ăn như chấm, phủ, trộn. Nhờ
+                "Nắp kép" tiện lợi
+                <b>Aji-mayo®</b> giúp Mẹ trang trí món ăn dễ dàng, thỏa sức sáng tạo.
+              </p>
+              <p>Vị chua béo hài hòa của
+                <b>Aji-mayo®</b>&nbsp;không những hợp khẩu vị của người Việt mà con mang đến vị ngon tuyệt vời cho các món rau,
+                giúp bé ăn thật nhiều rau mỗi ngày.
+              </p>
+            </div>
+            <div *ngSwitchCase="2">
+              <p>Xốt
+                <b>Mayonnaise&nbsp;Aji-mayo®</b>&nbsp; là sự hòa quyện giữa hương sữa thơm ngon cùng vị chua béo đặc trưng của
+                mayonnaise, thích hợp để chấm bánh mì, sandwich, khoai tây chiên hay trộn salad trái cây…
+                <b>Nhờ "Nắp kép" tiện lợi </b> giúp Mẹ trang trí món ăn dễ dàng, thỏa sức sáng tạo.
+              </p>
+              <p>Vị chua béo hài hòa của
+                <b>Aji-mayo®</b>&nbsp;không những hợp khẩu vị của người Việt mà con mang đến vị ngon tuyệt vời cho các món rau,
+                giúp bé ăn thật nhiều rau mỗi ngày.
+              </p>
+            </div>
+            <div *ngSwitchCase="3">
+              <p>Xốt
+                <b>Mayonnaise&nbsp;Aji-mayo®</b>&nbsp; là xốt gia vị đa năng phù hợp với nhiều món ăn, đặc biệt là các món chấm
+                và trộn. Vị chua béo hài hòa của Aji-mayo không những hợp khẩu vị người Việt mà còn mang đến vị ngon tuyệt
+                vời cho các món ăn thêm hấp dẫn. Aji-mayo ® hộp 1kg tiết kiệm hơn, thích hợp dùng cho nhà hàng và quán ăn.
+              </p>
+            </div>
+          </div>
+          <p>
+            <iframe frameborder="0" src="//www.youtube.com/embed/yU6n5jBGbYM" width="640" height="360" class="note-video-clip"></iframe>
+            <br>
+          </p>
+        </div>
       </div>
-      <div class="product-content content-block1 box">
-        <p>Xốt
-          <b>Mayonnaise&nbsp;Aji-mayo®</b>&nbsp;là xốt gia vị đa năng phù hợp với nhiều món ăn như chấm, phủ, trộn. Nhờ "Nắp
-          kép" tiện lợi
-          <b>Aji-mayo®</b> giúp Mẹ trang trí món ăn dễ dàng, thỏa sức sáng tạo.
-        </p>
-        <p>Vị chua béo hài hòa của
-          <b>Aji-mayo®</b>&nbsp;không những hợp khẩu vị của người Việt mà con mang đến vị ngon tuyệt vời cho các món rau, giúp
-          bé ăn thật nhiều rau mỗi ngày.
-        </p>
-        <p>
-          <iframe frameborder="0" src="//www.youtube.com/embed/yU6n5jBGbYM" width="640" height="360" class="note-video-clip"></iframe>
-          <br>
-        </p>
+      <div class="product-container col-md-12" *ngIf="!isShow">
+        <span class="product-section box">
+          thành phần
+        </span>
+        <div class="product-content content-block1 box">
+          <div [ngSwitch]="tabIndex">
+            <div *ngSwitchCase="1">
+              <div class="product-content product-line-1">
+                <p>Nước</p>
+                <p>Muối</p>
+                <p>Giấm</p>
+                <p>Đường</p>
+                <p>Bột trứng</p>
+                <p>Mạch nha</p>
+                <p>Trứng gà tươi (4.0%)
+                  <br>
+                </p>
+                <p>Dầu thực vật (dầu nành, dầu hạt cải)</p>
+                <p>Chất điều vị (mononatri glutamate 621)</p>
+                <p>Chất chống oxy hóa (butyl hydroxytoluen 321)</p>
+                <p>Chất điều chỉnh độ acid (acid axetic 260, acid xitric 330)</p>
+                <p>Chất bảo quản (kali sorbat 202, dinatri etylen-diamin-tetra-axetat 386)
+                  <br>
+                </p>
+                <p>Chất ổn định (distarch phosphat hydroxypropyl 1442, gôm xathan 415)</p>
+                <p>Phẩm màu (beta-caroten tổng hợp 160a(i))</p>
+                <p>* Sản phẩm có chứa trứng, Đậu nành và sulfite</p>
+              </div>
+              <span class="product-section">Giá trị dinh dưỡng</span>
+              <div class="product-content product-line-2">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Năng lượng</td>
+                      <td>480 - 720 kcal</td>
+                    </tr>
+                    <tr>
+                      <td>Protit</td>
+                      <td>1,1 - 1,7 g</td>
+                    </tr>
+                    <tr>
+                      <td>Lipit</td>
+                      <td>47&nbsp; - 71 g</td>
+                    </tr>
+                    <tr>
+                      <td>Carbohydrat</td>
+                      <td>10,5 - 15,5 g</td>
+                    </tr>
+                  </tbody>
+                  <p>
+                    <br>
+                  </p>
+                </table>
+              </div>
+            </div>
+            <div *ngSwitchCase="2">
+              <div class="product-content product-line-1">
+                <p>Nước</p>
+                <p>Muối</p>
+                <p>Giấm</p>
+                <p>Đường</p>
+                <p>Bột trứng</p>
+                <p>Mạch nha</p>
+                <p>Trứng gà tươi (4.0%)
+                  <br>
+                </p>
+                <p>Dầu thực vật (dầu nành, dầu hạt cải)</p>
+                <p>Chất điều vị (mononatri glutamate 621)</p>
+                <p>Chất chống oxy hóa (butyl hydroxytoluen 321)</p>
+                <p>Chất điều chỉnh độ acid (acid axetic 260, acid xitric 330)</p>
+                <p>Chất bảo quản (kali sorbat 202, dinatri etylen-diamin-tetra-axetat 386)
+                  <br>
+                </p>
+                <p>Chất ổn định (distarch phosphat hydroxypropyl 1442, gôm xathan 415)</p>
+                <p>Phẩm màu (beta-caroten tổng hợp 160a(i))</p>
+                <p>* Sản phẩm có chứa trứng, Đậu nành và sulfite</p>
+              </div>
+              <span class="product-section">Giá trị dinh dưỡng</span>
+              <div class="product-content product-line-2">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Năng lượng</td>
+                      <td>480 - 720 kcal</td>
+                    </tr>
+                    <tr>
+                      <td>Protit</td>
+                      <td>1,1 - 1,7 g</td>
+                    </tr>
+                    <tr>
+                      <td>Lipit</td>
+                      <td>47&nbsp; - 71 g</td>
+                    </tr>
+                    <tr>
+                      <td>Carbohydrat</td>
+                      <td>10,5 - 15,5 g</td>
+                    </tr>
+                  </tbody>
+                  <p>
+                    <br>
+                  </p>
+                </table>
+              </div>
+            </div>
+            <div *ngSwitchCase="3">
+              <div class="product-content product-line-1">
+                <p>Nước</p>
+                <p>Muối</p>
+                <p>Giấm</p>
+                <p>Đường</p>
+                <p>Bột trứng</p>
+                <p>Mạch nha</p>
+                <p>Trứng gà tươi (4.0%)
+                  <br>
+                </p>
+                <p>Dầu thực vật (dầu nành, dầu hạt cải)</p>
+                <p>Chất điều vị (mononatri glutamate 621)</p>
+                <p>Chất chống oxy hóa (butyl hydroxytoluen 321)</p>
+                <p>Chất điều chỉnh độ acid (acid axetic 260, acid xitric 330)</p>
+                <p>Chất bảo quản (kali sorbat 202, dinatri etylen-diamin-tetra-axetat 386)
+                  <br>
+                </p>
+                <p>Chất ổn định (distarch phosphat hydroxypropyl 1442, gôm xathan 415)</p>
+                <p>Phẩm màu (beta-caroten tổng hợp 160a(i))</p>
+                <p>* Sản phẩm có chứa trứng, Đậu nành và sulfite</p>
+              </div>
+              <span class="product-section">Giá trị dinh dưỡng</span>
+              <div class="product-content product-line-2">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Năng lượng</td>
+                      <td>480 - 720 kcal</td>
+                    </tr>
+                    <tr>
+                      <td>Protit</td>
+                      <td>1,1 - 1,7 g</td>
+                    </tr>
+                    <tr>
+                      <td>Lipit</td>
+                      <td>47&nbsp; - 71 g</td>
+                    </tr>
+                    <tr>
+                      <td>Carbohydrat</td>
+                      <td>10,5 - 15,5 g</td>
+                    </tr>
+                  </tbody>
+                  <p>
+                    <br>
+                  </p>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-lg-4 text-center img-kem">
+    <div class="col-lg-4 text-center img-kem" *ngIf="isShow">
       <img src="assets/images/kem.png" class="image-col-right">
     </div>
+  </div>
+
+  <div class="col-md-12 prev-next text-center">
+    <a class="isPrev" (click)="changeData(true)">
+      <img src="assets/images/prev.png">
+    </a>
+    <a class="isNext" (click)="changeData(false)">
+      <img src="assets/images/next.png">
+    </a>
   </div>
 </div>

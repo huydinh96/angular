@@ -17,13 +17,13 @@
               </a>
             </li>
             <li class="nav-item menu-item activce">
-              <a class="nav-link" routerLink="">Tìm hiểu aji-mayo</a>
+              <a class="nav-link">Tìm hiểu aji-mayo</a>
               <ul class="sub-menu">
                 <li>
-                  <a [routerLink]="['brands/product']">Tìm hiểu sản phẩm</a>
+                  <a [routerLink]="['brands/product']" (click)="onHide(true)">Tìm hiểu sản phẩm</a>
                 </li>
                 <li>
-                  <a [routerLink]="['brands/process']">Về aji-mayo</a>
+                  <a [routerLink]="['brands/process']" (click)="onHide(false)">Về aji-mayo</a>
                 </li>
               </ul>
             </li>
@@ -31,7 +31,7 @@
               <a class="nav-link" routerLink="/register">Đăng Kí Tài Khoản</a>
             </li>
             <li class="nav-item menu-item" *ngIf="isLogin">
-              <a class="nav-link" (click)="onClickLogout()">Xin Chao </a>
+              <a class="nav-link" (click)="onClickLogout()">Xin Chào </a>
             </li>
           </ul>
         </div>

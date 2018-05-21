@@ -5,7 +5,7 @@
   <img src="assets/images/shine.png" alt="" class="shine-img img-responsive">
   <img src="assets/images/ajimayo-about.png" alt="">
 </div>
-<div class="row menu">
+<div class="row menu" *ngIf="!isHide">
   <div class="col-md-4">
     <div class="cs-button" routerLinkActive="active">
       <a [routerLink]="['/brands/material']">Nguyên Liệu</a>
@@ -20,6 +20,16 @@
     <div class="cs-button" routerLinkActive="active">
       <a [routerLink]="['/brands/info']">Thông Tin Dinh Dưỡng</a>
     </div>
+  </div>
+</div>
+<div class="row" *ngIf="isHide">
+  <div class="text-center btn-about-ajimayo">
+    <div class="cs-button button-white active">
+      <a routerLink="/brands/material">Về Aji-mayo
+        <sup class="roboto-bold">®</sup>
+      </a>
+    </div>
+    <img src="assets/images/shadow-about-aj.png" style="width: 100%;">
   </div>
 </div>
 <router-outlet></router-outlet>
