@@ -9,18 +9,21 @@ import { BrandStoryComponent } from './brand-story/brand-story.component';
 import { InfoNutritionComponent } from './brand-story/info-nutrition/info-nutrition.component';
 import { ProductMaterialsComponent } from './brand-story/product-materials/product-materials.component';
 import { ProductShowComponent } from './brand-story/product-show/product-show.component';
+import { HomeComponent } from './home/home.component';
 export const appRoutes: Routes = [
     {
         path: 'brands',
         component: BrandStoryComponent,
         children: [
-            {path: 'process', component: ProductProcessingComponent},
-            {path: 'info', component: InfoNutritionComponent},
-            {path: 'material', component: ProductMaterialsComponent},
-            {path: 'product', component: ProductShowComponent},
+            { path: 'process', component: ProductProcessingComponent },
+            { path: 'info', component: InfoNutritionComponent },
+            { path: 'material', component: ProductMaterialsComponent },
+            { path: 'product', component: ProductShowComponent },
         ]
 
     },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'bao-mat', component: PolicySecurityComponent },

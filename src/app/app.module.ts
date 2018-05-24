@@ -24,6 +24,9 @@ import { InfoNutritionComponent } from './brand-story/info-nutrition/info-nutrit
 import { ProductProcessingComponent } from './brand-story/product-processing/product-processing.component';
 import { ProductMaterialsComponent } from './brand-story/product-materials/product-materials.component';
 import { ProductShowComponent } from './brand-story/product-show/product-show.component';
+import { HomeComponent } from './home/home.component';
+import { SlideComponent } from './home/slide/slide.component';
+import { ContentComponent } from './home/content/content.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,9 @@ import { ProductShowComponent } from './brand-story/product-show/product-show.co
     InfoNutritionComponent,
     ProductMaterialsComponent,
     ProductShowComponent,
+    HomeComponent,
+    SlideComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,

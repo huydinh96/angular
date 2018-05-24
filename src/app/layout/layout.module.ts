@@ -7,7 +7,6 @@ import { FooterComponent } from './footer/footer.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '../providers/auth.service';
-import { SliderComponent } from './slider/slider.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,11 +14,10 @@ import { SliderComponent } from './slider/slider.component';
     MatMenuModule,
     RouterModule,
   ],
-  declarations: [MenuComponent, FooterComponent, SliderComponent],
+  declarations: [MenuComponent, FooterComponent],
   exports: [
     MenuComponent,
     FooterComponent,
-    SliderComponent,
   ],
   entryComponents: [
   ],
