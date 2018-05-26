@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NguCarousel } from '@ngu/carousel';
+declare var $: any;
 @Component({
   selector: 'app-slide',
   templateUrl: './slide.component.html',
@@ -10,18 +11,13 @@ export class SlideComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // this.carouselOne = {
-    //   grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
-    //   slide: 1,
-    //   speed: 400,
-    //   interval: 4000,
-    //   point: {
-    //     visible: true
-    //   },
-    //   load: 2,
-    //   touch: true,
-    //   loop: true,
-    //   custom: 'banner'
-    // };
+    this.initSlider();
+  }
+  initSlider() {
+    $('.slide-img').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    });
   }
 }

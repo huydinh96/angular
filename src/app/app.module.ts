@@ -27,6 +27,8 @@ import { ProductShowComponent } from './brand-story/product-show/product-show.co
 import { HomeComponent } from './home/home.component';
 import { SlideComponent } from './home/slide/slide.component';
 import { ContentComponent } from './home/content/content.component';
+import { ProductService } from './providers/product.service';
+import { InStockPipe } from './Pipe/instock.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,7 @@ import { ContentComponent } from './home/content/content.component';
     HomeComponent,
     SlideComponent,
     ContentComponent,
+    InStockPipe,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { ContentComponent } from './home/content/content.component';
   providers: [
     ToastrService,
     AuthService,
+    ProductService,
   ],
   bootstrap: [AppComponent]
 })

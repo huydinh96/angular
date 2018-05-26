@@ -1,16 +1,71 @@
 .btn {
-    width: 50%;
+  width: 50%;
 }
-h2{
-    display: inline-block;
+
+h2 {
+  display: inline-block;
 }
-h2:nth-child(2){
-    float: right;
-    a{
-        text-decoration: none;
-        color: black;
-        &:hover{
-            color: red;
-        }
+
+h2:nth-child(2) {
+  float: right;
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: red;
     }
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.form-control {
+  margin: 10px 0;
+  width: 100%;
+  input {
+    padding: 10px 5px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #e2e2e2;
+    box-shadow: none;
+    background: transparent;
+    width: 100%;
+  }
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .submit {
+    box-shadow: none;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+  }
+}
+.tx-center{
+  left: 0;
+  right: 0;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42A948;
+  /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+  /* red */
 }

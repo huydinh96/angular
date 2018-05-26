@@ -5,6 +5,7 @@ import 'slick-carousel';
 import { NguCarouselModule } from '@ngu/carousel';
 import { SlideComponent } from './slide/slide.component';
 import { ContentComponent } from './content/content.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
     imports: [
         CommonModule,
@@ -14,6 +15,6 @@ import { ContentComponent } from './content/content.component';
     exports: [
         SlideComponent,
         ContentComponent,
-    ]
+    ],
 })
 export class HomeModule { }

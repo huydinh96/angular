@@ -18,29 +18,33 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSubmitLogin() {
-    this.authService.loginEmail(this.email, this.password)
-      .then((res) => {
-        // this.toastrService.success('Login thành công');
-        this.router.navigate(['/brands']);
-      }).catch((err) => {
-        console.log(err);
-        this.router.navigate(['/login']);
-      });
+  // onSubmitLogin() {
+  //   this.authService.loginEmail(this.email, this.password)
+  //     .then((res) => {
+  //       // this.toastrService.success('Login thành công');
+  //       this.router.navigate(['/brands']);
+  //     }).catch((err) => {
+  //       console.log(err);
+  //       this.router.navigate(['/login']);
+  //     });
+  // }
+  onSubmitLogin(value: any) {
+    // this.router.navigate(['/']);
+    console.log(value);
   }
   onClickFbLogin() {
     this.authService.loginFb().then((res) => {
-      this.router.navigate(['/brands']);
+      this.router.navigate(['/home']);
     }).catch((err) => console.log(err.message));
   }
   onClickGoogleLogin() {
     this.authService.loginGoogle().then((res) => {
-      this.router.navigate(['/brands']);
+      this.router.navigate(['/home']);
     }).catch((err) => console.log(err.message));
   }
   onClickTwLogin() {
     this.authService.loginTwitter().then((res) => {
-      this.router.navigate(['/brands']);
+      this.router.navigate(['/home']);
     }).catch((err) => console.log(err.message));
   }
 }
