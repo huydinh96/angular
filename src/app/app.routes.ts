@@ -10,6 +10,7 @@ import { InfoNutritionComponent } from './brand-story/info-nutrition/info-nutrit
 import { ProductMaterialsComponent } from './brand-story/product-materials/product-materials.component';
 import { ProductShowComponent } from './brand-story/product-show/product-show.component';
 import { HomeComponent } from './home/home.component';
+import { DetailComponent } from './detail/detail.component';
 export const appRoutes: Routes = [
     {
         path: 'brands',
@@ -23,7 +24,11 @@ export const appRoutes: Routes = [
 
     },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
+    {
+        path: 'home',
+        component: HomeComponent,
+    },
+    { path: 'detail/:id', component: DetailComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'bao-mat', component: PolicySecurityComponent },

@@ -23,11 +23,11 @@
       border-radius: 30px;
       color: white;
       font-family: 'Roboto-Bold';
-      display: block;
-      margin: 10px 10px;
-      font-size: 14px;
+      display: block; // margin: 10px 10px;
+      font-size: 13px;
       text-transform: uppercase;
-      &.active-child{
+      line-height: 3;
+      &.active-child {
         color: #FFDA42;
       }
     }

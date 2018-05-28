@@ -18,7 +18,7 @@ import { AuthService } from './providers/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { BrandStoryComponent } from './brand-story/brand-story.component';
 import { InfoNutritionComponent } from './brand-story/info-nutrition/info-nutrition.component';
 import { ProductProcessingComponent } from './brand-story/product-processing/product-processing.component';
@@ -29,6 +29,8 @@ import { SlideComponent } from './home/slide/slide.component';
 import { ContentComponent } from './home/content/content.component';
 import { ProductService } from './providers/product.service';
 import { InStockPipe } from './Pipe/instock.pipe';
+import { MaterialModule } from './material';
+import { DetailComponent } from './detail/detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,7 @@ import { InStockPipe } from './Pipe/instock.pipe';
     SlideComponent,
     ContentComponent,
     InStockPipe,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,10 +62,10 @@ import { InStockPipe } from './Pipe/instock.pipe';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ToastrModule,
+    ToastrModule.forRoot(),
+    MaterialModule,
   ],
   providers: [
-    ToastrService,
     AuthService,
     ProductService,
   ],

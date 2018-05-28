@@ -6,15 +6,17 @@ import { NguCarouselModule } from '@ngu/carousel';
 import { SlideComponent } from './slide/slide.component';
 import { ContentComponent } from './content/content.component';
 import { RouterModule } from '@angular/router';
+import { DetailComponent } from './detail/detail.component';
 @NgModule({
     imports: [
         CommonModule,
         SlickModule.forRoot(),
     ],
-    declarations: [SlideComponent, ContentComponent],
+    declarations: [SlideComponent, ContentComponent, DetailComponent],
     exports: [
         SlideComponent,
         ContentComponent,
+        DetailComponent
     ],
 })
 export class HomeModule { }

@@ -4,3 +4,7 @@ export interface User {
     password: string;
     passwordConfirm: string;
 }
+export interface Authenticate {
+    username: string;
+    password: string;
+}

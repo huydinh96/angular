@@ -11,13 +11,13 @@ export class SlideComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.initSlider();
+    // this.initSlider();
   }
-  initSlider() {
-    $('.slide-img').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    });
-  }
+  // initSlider() {
+  //   $('.slide-img').slick({
+  //     infinite: true,
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //   });
+  // }
 }

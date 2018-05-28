@@ -149,6 +149,7 @@
   position: relative;
   transition: all 0.3s ease 0s;
   cursor: pointer;
+  outline: none;
   &:hover {
     border-radius: 10px;
     background: #ff0022;
@@ -165,8 +166,76 @@
   box-shadow: none;
 }
 
+
+.pagination-outer {
+  text-align: center;
+}
+
+.pagination {
+  display: inline-flex;
+}
+
+.pagination li a.page-link,
+.pagination li:first-child a.page-link,
+.pagination li:last-child a.page-link {
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  border-radius: 50%;
+  background: #28231c;
+  border: 2px solid #fb8115;
+  padding: 0;
+  margin-right: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fb8115;
+  position: relative;
+}
+
+.pagination li:last-child a.page-link {
+  margin-right: 0;
+}
+
+.pagination li a.page-link:hover {
+  border-color: #fb8115;
+  color: #fff;
+  z-index: 1;
+}
+
+.pagination li a.page-link:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fb8115;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease 0s;
+}
+
+.pagination li:hover a.page-link:before,
+.pagination li.active a.page-link:before {
+  opacity: 1;
+}
+
+.pagination li.active a.page-link {
+  background: #28231c;
+  border-color: #fb8115;
+  color: #fff;
+}
+
 @media only screen and (max-width:990px) {
   .box {
     margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 359px) {
+  .pagination {
+    display: block;
   }
 }

@@ -18,18 +18,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  loginUser(e){
-    e.preventDefault();
-    console.log(e);
-    var email = e.target.elements[0].value;
-    var pass = e.target.elements[1].value;
-
-    if (email == 'huycay@gmail.com' && pass =='142536')
-      this.router.navigate(['/home']);
-    else
-        this.router.navigate(['/register']);
-      
- }
+  onSubmitLogin(value: any) {
+    // this.router.navigate(['/']);
+    console.log(value);
+  }
   onClickFbLogin() {
     this.authService.loginFb().then((res) => {
       this.router.navigate(['/home']);
