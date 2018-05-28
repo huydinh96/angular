@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class InStockPipe implements PipeTransform {
     transform(value: Boolean) {
-        return value ? 'Còn Hàng' : 'Hết Hàng';
+        return value ? 'Còn Hàng' : 'Sắp Hết Hàng';
     }
 }

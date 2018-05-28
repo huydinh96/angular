@@ -27,7 +27,7 @@
       margin: 10px 10px;
       font-size: 14px;
       text-transform: uppercase;
-      &:hover{
+      &.active-child{
         color: #FFDA42;
       }
     }
@@ -42,7 +42,7 @@
     font-size: 18px;
     color: #2e2d2d;
     font-family: 'iCielSoupofJustice';
-    &:hover {
+    &.active {
       color: #fff;
     }
   }
