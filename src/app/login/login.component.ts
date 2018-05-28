@@ -18,20 +18,18 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  // onSubmitLogin() {
-  //   this.authService.loginEmail(this.email, this.password)
-  //     .then((res) => {
-  //       // this.toastrService.success('Login thành công');
-  //       this.router.navigate(['/brands']);
-  //     }).catch((err) => {
-  //       console.log(err);
-  //       this.router.navigate(['/login']);
-  //     });
-  // }
-  onSubmitLogin(value: any) {
-    // this.router.navigate(['/']);
-    console.log(value);
-  }
+  loginUser(e){
+    e.preventDefault();
+    console.log(e);
+    var email = e.target.elements[0].value;
+    var pass = e.target.elements[1].value;
+
+    if (email == 'huycay@gmail.com' && pass =='142536')
+      this.router.navigate(['/home']);
+    else
+        this.router.navigate(['/register']);
+      
+ }
   onClickFbLogin() {
     this.authService.loginFb().then((res) => {
       this.router.navigate(['/home']);

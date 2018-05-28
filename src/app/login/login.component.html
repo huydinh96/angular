@@ -4,7 +4,7 @@
       <div class="card-body">
         <h2>Login</h2>
         <h2><a routerLink="/register">Register</a></h2>
-        <form (submit)="onSubmitLogin(userForm.value)" #userForm="ngForm">
+        <form (submit)="loginUser($event)" #userForm="ngForm">
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" required> 

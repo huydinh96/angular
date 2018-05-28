@@ -17,18 +17,18 @@ export class UserService {
     constructor(private _http: Http) {
     }
     // post infoUser to API
-    postUser(infoUser: User): Observable<User> {
-        return this._http.post<User>(this.userUrl, infoUser, httpOption);
+    //postUser(infoUser: User): Observable<User> {
+        // return this._http.post<User>(this.userUrl, infoUser, httpOption);
     }
     // get from api to local
-    getUserApi(): any {
-        return this._http.get(this.userUrl);
-    }
-    getUser(): any {
-        return this.user.asObservable();
-    }
-    _user(user: any) {
-        console.log(user);
-        return this.user.next(user);
-    }
-}
+    // getUserApi(): any {
+    //     return this._http.get(this.userUrl);
+    // }
+    // getUser(): any {
+    //     return this.user.asObservable();
+    // }
+    // _user(user: any) {
+    //     console.log(user);
+    //     return this.user.next(user);
+    // }
+//}
