@@ -81,11 +81,9 @@ export class RegisterComponent implements OnInit {
       ]],
       password: ['', [
         Validators.required,
-        Validators.pattern('(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'),
       ]],
       confirmPassword: ['', [
         Validators.required,
-        Validators.pattern('(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'),
         this.matchPassWord,
       ]],
     });
