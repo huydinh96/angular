@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class DetailComponent implements OnInit {
   public _id: number;
   public subscription: any;
+  public product: any;
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/operator/map';
 @Injectable()
 export class ProductService {
-    private apiUrl = 'http://5b07883c92b3b4001425a092.mockapi.io/api/product';
+    private apiUrl = 'http://5b07883c92b3b4001425a092.mockapi.io/api/product/';
     constructor(private _http: Http) {
 
     }
