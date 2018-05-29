@@ -11,4 +11,7 @@ export class ProductService {
     GetProduct(): Observable<any[]> {
         return this._http.get(this.apiUrl).map((reponse: Response) => reponse.json());
     }
+    GetSingle(): Observable<any> {
+        return this._http.get(this.apiUrl + 'id=').map((reponse: Response) => reponse.json());
+    }
 }

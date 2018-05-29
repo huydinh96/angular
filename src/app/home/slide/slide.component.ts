@@ -11,13 +11,18 @@ export class SlideComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.initSlider();
-  }
-  initSlider() {
-    $('.slide-img').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+    $(document).ready(function () {
+      $('.slide-img').owlCarousel({
+        autoHeight: true,
+        center: true,
+        nav: true,
+        items: 1,
+        margin: 30,
+        loop: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true
+      });
     });
   }
 }

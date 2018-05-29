@@ -103,7 +103,7 @@ export class RegisterComponent implements OnInit {
     Object.keys(this.formErrors).map((field) => {
       const formControl = this.registerForm.get(field);
       if (formControl && formControl.dirty && formControl.invalid) {
-        this.formErrors[field] = 'bat buoc phai nhap du lieu';
+        this.formErrors[field] = 'Yêu cầu nhập dữ liệu';
       } else {
         this.formErrors[field] = '';
       }

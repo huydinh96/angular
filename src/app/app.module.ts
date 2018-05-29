@@ -29,6 +29,7 @@ import { SlideComponent } from './home/slide/slide.component';
 import { ContentComponent } from './home/content/content.component';
 import { ProductService } from './providers/product.service';
 import { InStockPipe } from './Pipe/instock.pipe';
+import { DetailComponent } from './detail/detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { InStockPipe } from './Pipe/instock.pipe';
     SlideComponent,
     ContentComponent,
     InStockPipe,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
