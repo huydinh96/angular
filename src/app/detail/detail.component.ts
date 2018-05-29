@@ -23,5 +23,4 @@ export class DetailComponent implements OnInit {
     // dùng phương thức unsubscribe để hủy subscription
     this.subscription.unsubscribe();
   }
-
 }

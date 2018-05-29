@@ -5,11 +5,12 @@ import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from
 import { RegisterService } from './register.service';
 import { User } from '../interface/user';
 import { UserService } from '../providers/user.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  providers: [RegisterService, UserService],
+  providers: [RegisterService, UserService, ToastrService],
 })
 export class RegisterComponent implements OnInit {
   registerUser: any;
@@ -32,6 +33,7 @@ export class RegisterComponent implements OnInit {
     private registerService: RegisterService,
     private router: Router,
     private userService: UserService,
+    private toastrService: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -43,7 +45,7 @@ export class RegisterComponent implements OnInit {
     this.registerService.register(this.registerForm.value).subscribe(
       () => {
         this.isSubmitting = false;
-        alert('Đăng kí thành công');
+        this.toastrService.success('Đăng kí thành công');
         this.router.navigate(['/login']);
       },
       (err) => {
@@ -75,14 +77,15 @@ export class RegisterComponent implements OnInit {
       ]],
       fullname: ['', [
         Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(255),
+        Validators.pattern('[a-zA-Z0-9]+'),
       ]],
       password: ['', [
         Validators.required,
+        Validators.pattern('(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'),
       ]],
       confirmPassword: ['', [
         Validators.required,
+        Validators.pattern('(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'),
         this.matchPassWord,
       ]],
     });
@@ -107,6 +110,9 @@ export class RegisterComponent implements OnInit {
       } else {
         this.formErrors[field] = '';
       }
+      // if (this.registerForm.get('fullname').dirty) {
+      //   this.toastrService.error('Nhập full name');
+      // }
     });
   }
 }

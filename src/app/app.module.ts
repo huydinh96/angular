@@ -18,7 +18,7 @@ import { AuthService } from './providers/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { BrandStoryComponent } from './brand-story/brand-story.component';
 import { InfoNutritionComponent } from './brand-story/info-nutrition/info-nutrition.component';
 import { ProductProcessingComponent } from './brand-story/product-processing/product-processing.component';
@@ -61,10 +61,9 @@ import { DetailComponent } from './detail/detail.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ToastrModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
-    ToastrService,
     AuthService,
     ProductService,
   ],

@@ -24,7 +24,11 @@ export const appRoutes: Routes = [
 
     },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
+    {
+        path: 'home',
+        component: HomeComponent,
+    },
+    { path: 'detail/:id', component: DetailComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'bao-mat', component: PolicySecurityComponent },

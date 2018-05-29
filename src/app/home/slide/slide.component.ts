@@ -25,4 +25,11 @@ export class SlideComponent implements OnInit {
       });
     });
   }
+  // initSlider() {
+  //   $('.slide-img').slick({
+  //     infinite: true,
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //   });
+  // }
 }

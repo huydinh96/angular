@@ -4,15 +4,13 @@ import { RouterModule } from '@angular/router';
 
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '../providers/auth.service';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatMenuModule,
     RouterModule,
+    FormsModule,
   ],
   declarations: [MenuComponent, FooterComponent],
   exports: [

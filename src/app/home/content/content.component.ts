@@ -13,14 +13,15 @@ export class ContentComponent implements OnInit {
   public products: any[];
   public pages: number[];
   public currentPage: number;
-  constructor(private productService: ProductService,
+  constructor(
+    private productService: ProductService,
     private router: Router,
     private activetedRouter: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     // lấy id items trong navigation
-    this.activetedRouter.queryParamMap.subscribe(params => {
+    this.activetedRouter.queryParams.subscribe(params => {
       this.currentPage = params['pageNumber'] || 1;
       console.log(this.currentPage);
     });
@@ -35,5 +36,9 @@ export class ContentComponent implements OnInit {
     console.log(product.name);
     this.select.emit(product);
   }
+  // public addToCart() {
+  //   const sanpham = [];
+  //   this.productService.addThemVaoGioHang(sanpham);
+  // }
 
 }

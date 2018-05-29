@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../providers/auth.service';
 import { auth } from 'firebase';
+import { ProductService } from '../../providers/product.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -10,9 +11,11 @@ export class MenuComponent implements OnInit {
   public isLogin: boolean;
   public nemberUser: string;
   public emailUser: string;
-  isHide = false;
+  public products: any[];
+  public keyword: string;
   constructor(
     private authService: AuthService,
+    private productService: ProductService,
   ) { }
 
   ngOnInit() {
@@ -30,7 +33,12 @@ export class MenuComponent implements OnInit {
   onClickLogout() {
     this.authService.logout();
   }
-  onHide() {
-    this.isHide = !this.isHide;
+  Search() {
+    this.productService.Search(this.keyword).subscribe((reponse: any) => {
+      this.products = reponse;
+      console.log(reponse);
+    }, error => {
+      console.log(error);
+    });
   }
 }
